@@ -1,1 +1,145 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at top, #3a0000, #0a0000);
+  overflow: hidden;
+  color: white;
+}
+
+/* сердечный фон */
+body::before {
+  content: "♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  font-size: 42px;
+  color: rgba(255, 0, 60, 0.06);
+  transform: rotate(-25deg);
+  top: -40%;
+  left: -40%;
+  line-height: 120px;
+  letter-spacing: 35px;
+  pointer-events: none;
+}
+
+/* слайды */
+.slide {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.active {
+  display: flex;
+}
+
+/* белая стеклянная рамка */
+.card {
+  padding: 40px 30px;
+  border-radius: 25px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 40px rgba(255,0,60,0.15);
+  max-width: 520px;
+}
+
+/* текст */
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* кнопки */
+.btn {
+  display: inline-block;
+  margin: 8px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15px;
+
+  color: white;
+  background: linear-gradient(145deg, #7a0000, #ff0033);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow: 0 0 18px rgba(255,0,60,0.25);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(255,0,60,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<div class="slide active" id="s1">
+  <div class="card">
+    <h1>а ты по мне скучаешь?</h1>
+    <button class="btn" onclick="go('s2')">да</button>
+    <button class="btn" onclick="go('s3')">нет</button>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="slide" id="s2">
+  <div class="card">
+    <h1>я тоже🥰. хочу внимания!</h1>
+    <button class="btn" onclick="go('s4')">я понимаю, я же работаю❤️</button>
+    <button class="btn" onclick="go('s5')">займись чем-нибудь интересным</button>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="slide" id="s3">
+  <div class="card">
+    <h1>я тогда тоже нет🙄🖕🏿</h1>
+    <button class="btn" onclick="go('s1')">последний шанс изменить ответ</button>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="slide" id="s4">
+  <div class="card">
+    <h1>сколько можно работаааать🥲</h1>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="slide" id="s5">
+  <div class="card">
+    <h1>ой,фак ю🙄</h1>
+    <button class="btn" onclick="go('s2')">я пошутил</button>
+  </div>
+</div>
+
+<script>
+function go(id){
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
