@@ -26,18 +26,23 @@ body {
 }
 
 /* сердечный фон */
-body::before {
-  content: "♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥";
-  position: absolute;
-  width: 200%;
-  height: 200%;
+  body::before {
+  content: "♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥";
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 200vw;
+  height: 200vh;
+
   font-size: 42px;
-  color: rgba(255, 0, 60, 0.06);
+  color: rgba(255, 0, 60, 0.08);
+
   transform: rotate(-25deg);
-  top: -40%;
-  left: -40%;
   line-height: 120px;
   letter-spacing: 35px;
+
+  z-index: 0;
   pointer-events: none;
 }
 
